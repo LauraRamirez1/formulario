@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+</head>
+<body>
+    <form id="app">
+
+    <p><b>Por favor, ingrese los siguientes datos:</b></p>
+
+    <p>
+        <label for="name">Nombre</label>
+        <input id="name"  v-model="name" type="text" name="name">
+    </p>
+
+    <p>
+        <label for="email">Correo electrónico</label>
+        <input id="email" v-model="email"  type="email" name="email">
+    </p>
+
+    <p>
+        <label for="email">Asunto</label>
+        <input id="subject" v-model="subject"  type="text" name="subject">
+    </p>
+    <p>
+        <label for="email">Mensaje</label>
+        <textarea id="message" v-model="message"  type="text" name="message"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Enviar">
+    </p>
+
+    </form>
+</body>
+</html>
