@@ -6,32 +6,37 @@
     <title>FORMULARIO</title>
 </head>
 <body>
-    <form id="app">
+    <form id="app"  @submit="checkForm"  method="post">
+        <p><b>Por favor, ingrese los siguientes datos:</b></p>
 
-    <p><b>Por favor, ingrese los siguientes datos:</b></p>
+        <p>
+            <label for="name">Nombre</label>
+            <input id="name"  v-model="name" type="text" name="name">
+        </p>
 
-    <p>
-        <label for="name">Nombre</label>
-        <input id="name"  v-model="name" type="text" name="name">
-    </p>
+        <p>
+            <label for="email">Correo electrónico</label>
+            <input id="email" v-model="email"  type="email" name="email">
+        </p>
 
-    <p>
-        <label for="email">Correo electrónico</label>
-        <input id="email" v-model="email"  type="email" name="email">
-    </p>
-
-    <p>
-        <label for="email">Asunto</label>
-        <input id="subject" v-model="subject"  type="text" name="subject">
-    </p>
-    <p>
-        <label for="email">Mensaje</label>
-        <textarea id="message" v-model="message"  type="text" name="message"></textarea>
-    </p>
-    <p>
-        <input type="submit" value="Enviar">
-    </p>
-
+        <p>
+            <label for="email">Asunto</label>
+            <input id="subject" v-model="subject"  type="text" name="subject">
+        </p>
+        <p>
+            <label for="email">Mensaje</label>
+            <textarea id="message" v-model="message"  type="text" name="message"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
+        <p v-if="errors.length">
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+        </p>
     </form>
 </body>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="./app.js"></script>
 </html>
