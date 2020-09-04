@@ -9,7 +9,26 @@ var app= new Vue({
             errors: []
         }
     },
-    methods: {
+    methods: {        
+        sendInformation(){
+            let data = {
+                "to": "contacto@altera.cl",
+                "from": this.email,
+                "sender":this.name,
+                "subject": this.subject,
+                "msg": this.message
+            }
+            axios
+                .post('https://sender.alteracloud.com/send',data)
+                .then((response)=>{
+                    console.log(response);
+                    this.email="";
+                    this.name="";
+                    this.subject="";
+                    this.message="";
+                })
+                .catch((error)=>console.log(error))
+        },
         checkForm: function (e) {
             this.errors = [];
             if (!this.name) {
@@ -31,6 +50,7 @@ var app= new Vue({
             return true;
             }
             e.preventDefault();
+            sendInformation();
         }
     },
 })
