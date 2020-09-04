@@ -24,6 +24,9 @@ var app= new Vue({
             if (!this.message) {
                         this.errors.push('El mensaje es obligatorio.');
                     }
+            if (this.name.length <6 || this.email.length <6 || this.subject.length <6  || this.message.length <6) {
+                        this.errors.push('SUS DATOS DEBEN TENER COMO MÍNIMO 5 CARACTERES');
+                    }
             if (!this.errors.length) {
             return true;
             }
